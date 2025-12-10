@@ -1,6 +1,6 @@
 import ImageIO
 
-extension CGImagePropertyOrientation: CustomStringConvertible {
+extension CGImagePropertyOrientation: @retroactive CustomStringConvertible {
 
     /// Helper that makes instances of type `CGImagePropertyOrientation` print-friendly.
     ///

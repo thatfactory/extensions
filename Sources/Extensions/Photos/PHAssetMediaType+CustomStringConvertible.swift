@@ -1,6 +1,6 @@
 import Photos
 
-extension PHAssetMediaType: CustomStringConvertible {
+extension PHAssetMediaType: @retroactive CustomStringConvertible {
 
     /// Helper that makes instances of type `PHAssetMediaType` print-friendly.
     ///

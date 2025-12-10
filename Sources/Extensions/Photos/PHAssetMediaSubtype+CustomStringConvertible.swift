@@ -1,6 +1,6 @@
 import Photos
 
-extension PHAssetMediaSubtype: CustomStringConvertible {
+extension PHAssetMediaSubtype: @retroactive CustomStringConvertible {
 
     /// Helper that makes instances of type `PHAssetMediaSubtype` print-friendly.
     ///
@@ -17,7 +17,7 @@ extension PHAssetMediaSubtype: CustomStringConvertible {
         }
     }
 
-    public static var debugDescriptions: [(value: Self, description: String)] = [
+    public static let debugDescriptions: [(value: Self, description: String)] = [
         (.photoPanorama, "photoPanorama"),
         (.photoHDR, "photoHDR"),
         (.photoScreenshot, "photoScreenshot"),
