@@ -19,6 +19,7 @@ extension PHAssetMediaSubtype: @retroactive CustomStringConvertible {
         }
     }
 
+    /// Debug-friendly descriptions for common media subtypes.
     public static let debugDescriptions: [(value: Self, description: String)] = [
         (.photoPanorama, "photoPanorama"),
         (.photoHDR, "photoHDR"),

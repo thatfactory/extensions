@@ -25,6 +25,11 @@ struct RoundedCorner: Shape {
 }
 
 public extension View {
+    /// Clips the view with rounded corners for the specified corners.
+    ///
+    /// - Parameters:
+    ///   - radius: The corner radius to apply.
+    ///   - corners: The corners that should be rounded.
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }

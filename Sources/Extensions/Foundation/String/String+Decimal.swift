@@ -31,7 +31,9 @@ public extension String {
     ///     // Returns "123.4"
     ///     ```
     func formatDecimalString(fractionDigits: Int) -> String {
-        guard let value = Double(self) else { return self }
+        guard let value = Double(self) else {
+            return self
+        }
 
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0

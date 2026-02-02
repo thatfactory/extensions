@@ -1,6 +1,6 @@
 import Foundation
 
-/// Provides convenient `CGFloat` constants for common angle measurements in radians.
+/// Provides convenient `CGFloat` constants for common angle measurements in radians.
 ///
 /// Example 1:
 /// Rotate a view by 90 degrees:

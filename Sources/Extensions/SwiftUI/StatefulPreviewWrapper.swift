@@ -34,6 +34,11 @@ public struct StatefulPreviewWrapper<Value: Equatable, Content: View>: View {
 
     private var content: ([Binding<Value>]) -> Content
 
+    /// Creates a preview wrapper with initial values exposed as bindings.
+    ///
+    /// - Parameters:
+    ///   - initialStates: The initial values to bind into the preview.
+    ///   - content: A view builder that receives bindings for each state.
     public init(
         _ initialStates: [Value],
         content: @escaping ([Binding<Value>]) -> Content

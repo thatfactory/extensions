@@ -5,6 +5,7 @@ public struct FadeOut: ViewModifier {
     /// The edge to be faded out.
     public let edge: Edge
 
+    /// The edge that should fade out.
     public enum Edge: String {
         case top
         case bottom
@@ -45,6 +46,9 @@ public struct FadeOut: ViewModifier {
 }
 
 public extension View {
+    /// Fades out the view on the specified edge.
+    ///
+    /// - Parameter edge: The edge to fade out.
     func fadeOut(edge: FadeOut.Edge) -> some View {
         modifier(FadeOut(edge: edge))
     }
