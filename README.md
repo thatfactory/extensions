@@ -20,15 +20,23 @@ Framework | Extension | Description
 &#xfeff;| `String+Masking` | Hides sensitive information. Returns `••••` when `self` is not empty.
 &#xfeff;| `String+Split` | Returns the first component of the string up to, but not including, the first occurrence of a given separator.
 [Image I/O](https://developer.apple.com/documentation/ImageIO) | `CGImagePropertyOrientation+CaseIterable` | Extends `CGImagePropertyOrientation` to conform to `CaseIterable`, providing a collection of all orientation cases.
-&#xfeff;| `CGImagePropertyOrientation+CustomStringConvertible` | Makes `CGImagePropertyOrientation` instances print-friendly. Examples:<br> - `print(orientation.description)`<br>Output: **`Left (Rotated 90° CW (ClockWise)`**<br> - `print(orientation.shortDescription)`<br>Output: **`Up`**<br> - `print(orientation.emoji)`<br>Output (orientation is up/mirrored): **`⬆️🪞`**<br> - `print(orientation.emoji)`<br>Output (orientation is unknown): **`🤷🏻‍♂️`**
+&#xfeff;| `CGImagePropertyOrientation+CustomStringConvertible` | Makes `CGImagePropertyOrientation` instances print-friendly. Examples:<br> - `print(orientation.description)`<br>Output: **`8, Left (Rotated 90° CW (ClockWise))`**<br> - `print(orientation.shortDescription)`<br>Output: **`Up`**<br> - `print(orientation.emoji)`<br>Output (orientation is up/mirrored): **`⬆️🪞`**<br> - `print(orientation.emoji)`<br>Output (orientation is unknown): **`🤷🏻‍♂️`**
 &#xfeff;| `CGImagePropertyOrientation+UIImage.Orientation` | Facilitates the conversion between `CGImagePropertyOrientation` and `UIImage.Orientation`, ensuring accurate mapping despite their differing underlying numeric values.
-[PhotoKit](https://developer.apple.com/documentation/photokit) | `PHAssetMediaSubtype+CustomStringConvertible` | Makes `PHAssetMediaSubtype` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `photoPanorama`<br> - `print(phAssetMediaType.description)`<br>Output: `videoHighFrameRate`
-&#xfeff;| `PHAssetMediaType+CustomStringConvertible` | Makes `PHAssetMediaType` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `Image`<br> - `print(phAssetMediaType.description)`<br>Output: `Audio`
+[PhotoKit](https://developer.apple.com/documentation/photokit) | `PHAssetMediaSubtype+CustomStringConvertible` | Makes `PHAssetMediaSubtype` instances print-friendly. Examples:<br> - `print(phAssetMediaSubtype.description)`<br>Output: `photoPanorama`<br> - `print(phAssetMediaSubtype.description)`<br>Output: `videoHighFrameRate`
+&#xfeff;| `PHAssetMediaType+CustomStringConvertible` | Makes `PHAssetMediaType` instances print-friendly. Examples:<br> - `print(phAssetMediaType.description)`<br>Output: `1, Image`<br> - `print(phAssetMediaType.description)`<br>Output: `3, Audio`
 [SwiftUI](https://developer.apple.com/documentation/swiftui) | `FadeOut` | Fades out the edge of a view based on a given `FadeOut.Edge`.
 &#xfeff;| `FrameSize` | Adds a dashed-colored frame-size container to a view for UI debugging.
 &#xfeff;| `Shape+RoundedCorner` | Produces a shape with rounded corners. Allows specifying which corner is to be rounded. For example:<br>`.cornerRadius(20, corners: [.topLeft, .bottomRight])`
 &#xfeff;| `StatefulPreviewWrapper` | Makes Xcode's preview canvas fully functional for previewing SwiftUI views that take `@Bindings` as input.
 &#xfeff;| `View+Modify` | Allows applying view modifiers based on some criteria. For example:<br>`Text("Some").modify { if someCondition { $0.bold() } }`
+
+## Preview Traits
+
+Trait | Description
+--- | ---
+`navigationStack` | Wraps a preview in a `NavigationStack`.
+`enUS` | Sets the preview locale to `en-US`.
+`ptBR` | Sets the preview locale to `pt-BR`.
 
 ## SwiftUI Extension Screenshots
 
