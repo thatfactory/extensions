@@ -1,3 +1,5 @@
+#if canImport(Photos)
+
 import Photos
 
 extension PHAssetMediaType: @retroactive CustomStringConvertible {
@@ -18,3 +20,5 @@ extension PHAssetMediaType: @retroactive CustomStringConvertible {
         }
     }
 }
+
+#endif

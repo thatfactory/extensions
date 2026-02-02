@@ -1,3 +1,5 @@
+#if canImport(Photos)
+
 import Photos
 
 extension PHAssetMediaSubtype: @retroactive CustomStringConvertible {
@@ -29,3 +31,5 @@ extension PHAssetMediaSubtype: @retroactive CustomStringConvertible {
         (.videoCinematic, "videoCinematic") // Needs iOS 15+, macOS 13+
     ]
 }
+
+#endif

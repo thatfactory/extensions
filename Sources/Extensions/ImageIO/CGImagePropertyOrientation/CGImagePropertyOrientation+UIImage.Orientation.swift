@@ -1,4 +1,5 @@
-#if os(iOS) || os(tvOS)
+#if canImport(UIKit)
+
 import ImageIO
 import UIKit
 

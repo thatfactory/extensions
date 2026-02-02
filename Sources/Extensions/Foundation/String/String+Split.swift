@@ -7,7 +7,6 @@
 
 import Foundation
 
-@available(iOS 16.0, *)
 public extension String {
 
     /// Returns the first component of the string up to, but not including, the first occurrence of the
