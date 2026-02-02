@@ -6,7 +6,7 @@ let package = Package(
     name: "Extensions",
     platforms: [
         .iOS(.v18),
-        .macOS(.v13)
+        .macOS(.v15)
     ],
     products: [
         .library(
