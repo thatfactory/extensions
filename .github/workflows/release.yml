@@ -44,12 +44,21 @@ jobs:
       - name: Generate DocC
         run: |
           set -euo pipefail
-          swift package \
-            --allow-writing-to-directory ./public \
-            generate-documentation \
-            --target Extensions \
+          DERIVED_DATA=".build/DerivedData"
+          xcodebuild docbuild \
+            -scheme Extensions \
+            -destination "generic/platform=iOS" \
+            -derivedDataPath "$DERIVED_DATA"
+
+          DOCCARCHIVE=$(find "$DERIVED_DATA" -path "*Build/Products/*/Extensions.doccarchive" -print -quit)
+          if [ -z "${DOCCARCHIVE:-}" ]; then
+            echo "DocC archive not found in $DERIVED_DATA"
+            exit 1
+          fi
+
+          xcrun docc process-archive transform-for-static-hosting \
+            "$DOCCARCHIVE" \
             --output-path ./public \
-            --transform-for-static-hosting \
             --hosting-base-path extensions
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
