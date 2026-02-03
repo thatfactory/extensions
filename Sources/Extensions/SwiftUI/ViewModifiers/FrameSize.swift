@@ -29,6 +29,8 @@ public extension View {
     /// Applies the `FrameSize` modifier to the view.
     ///
     /// - Parameter color: The stroke `Color`. Default is `.blue`.
+    ///
+    /// ![FrameSize preview](framesize.png)
     @ViewBuilder func frameSize(_ color: Color = .blue) -> some View {
 #if DEBUG
         // Makes sure the debugging frame doesn't ever show up in production.
