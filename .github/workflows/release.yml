@@ -60,6 +60,12 @@ jobs:
             "$DOCCARCHIVE" \
             --output-path ./public \
             --hosting-base-path extensions
+
+          cat > ./public/index.html <<'EOF'
+          <!doctype html>
+          <meta http-equiv="refresh" content="0; url=/extensions/documentation/extensions/" />
+          <title>Extensions Documentation</title>
+          EOF
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:

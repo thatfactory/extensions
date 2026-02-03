@@ -2,7 +2,7 @@
 [![xcode-version](https://img.shields.io/badge/xcode-26.2-50ace8.svg?logo=xcode&logoColor=white)](https://developer.apple.com/xcode/)
 [![spm-ready](https://img.shields.io/badge/spm-ready-b68f6a.svg?logo=gitlfs&logoColor=white)](https://developer.apple.com/documentation/xcode/swift-packages)
 [![platforms](https://img.shields.io/badge/platforms-iOS%2018+%20%7C%20macOS%2015+%20-lightgrey.svg?logo=apple&logoColor=white)](https://en.wikipedia.org/wiki/List_of_Apple_operating_systems)
-[![docc](https://img.shields.io/badge/docc-documentation-0288D1.svg?logo=bookstack&logoColor=white)](https://thatfactory.github.io/extensions/)
+[![docc](https://img.shields.io/badge/docc-documentation-0288D1.svg?logo=bookstack&logoColor=white)](https://thatfactory.github.io/extensions/documentation/extensions/)
 [![license](https://img.shields.io/badge/license-MIT-67ac5b.svg?logo=googledocs&logoColor=white)](https://en.wikipedia.org/wiki/MIT_License)
 [![release](https://github.com/thatfactory/extensions/actions/workflows/release.yml/badge.svg)](https://github.com/thatfactory/extensions/actions/workflows/release.yml)
 
