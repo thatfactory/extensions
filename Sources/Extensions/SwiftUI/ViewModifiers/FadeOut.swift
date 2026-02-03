@@ -49,6 +49,8 @@ public extension View {
     /// Fades out the view on the specified edge.
     ///
     /// - Parameter edge: The edge to fade out.
+    ///
+    /// ![FadeOut preview](fadeout.png)
     func fadeOut(edge: FadeOut.Edge) -> some View {
         modifier(FadeOut(edge: edge))
     }

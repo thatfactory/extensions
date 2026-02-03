@@ -10,11 +10,11 @@ import SwiftUI
 /// ```
 ///
 /// [source](https://stackoverflow.com/a/58606176/584548)
-struct RoundedCorner: Shape {
+public struct RoundedCorner: Shape {
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
 
-    func path(in rect: CGRect) -> Path {
+    public func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(
             roundedRect: rect,
             byRoundingCorners: corners,
@@ -30,6 +30,8 @@ public extension View {
     /// - Parameters:
     ///   - radius: The corner radius to apply.
     ///   - corners: The corners that should be rounded.
+    ///
+    /// ![RoundedCorner preview](roundedcorner.png)
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
