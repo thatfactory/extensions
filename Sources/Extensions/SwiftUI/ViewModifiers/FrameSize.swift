@@ -1,10 +1,10 @@
 import SwiftUI
 
 /// Adds a dashed-colored frame-size container to a view for UI debugging.
-struct FrameSize: ViewModifier {
+public struct FrameSize: ViewModifier {
     let color: Color
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .overlay(GeometryReader(content: overlay(for:)))
     }
@@ -29,8 +29,6 @@ public extension View {
     /// Applies the `FrameSize` modifier to the view.
     ///
     /// - Parameter color: The stroke `Color`. Default is `.blue`.
-    ///
-    /// ![FrameSize preview](framesize.png)
     @ViewBuilder func frameSize(_ color: Color = .blue) -> some View {
 #if DEBUG
         // Makes sure the debugging frame doesn't ever show up in production.
