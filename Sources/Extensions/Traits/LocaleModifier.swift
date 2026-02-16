@@ -1,6 +1,11 @@
 import SwiftUI
 
 public extension PreviewTrait<Preview.ViewTraits> {
+    /// Preview trait for German locale (Germany).
+    static var deDE: Self {
+        .modifier(LocaleModifier(localeIdentifier: "de-DE"))
+    }
+
     /// Preview trait for U.S. English locale.
     static var enUS: Self {
         .modifier(LocaleModifier(localeIdentifier: "en-US"))
