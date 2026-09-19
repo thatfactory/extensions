@@ -7,8 +7,7 @@
 
 import Foundation
 
-public extension String {
-
+extension String {
     /// Returns the first component of the string up to, but not including, the first occurrence of the
     /// specified separator. If the separator is not found in the string, the entire string is returned.
     ///
@@ -24,7 +23,7 @@ public extension String {
     /// "BTC".firstComponentSeparatedBy(separator: ":")      // Returns "BTC"
     /// "BTC".firstComponentSeparatedBy(separator: "!!")     // Returns "BTC"
     /// ```
-    func firstComponentSeparatedBy(_ separator: String) -> String {
+    public func firstComponentSeparatedBy(_ separator: String) -> String {
         let parts = self.split(
             separator: separator,
             maxSplits: 1,

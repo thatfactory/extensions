@@ -1,4 +1,4 @@
-import SwiftUI
+public import SwiftUI
 
 /// Makes Xcode's preview canvas fully functional for previewing
 /// SwiftUI views that take `@Bindings` as input.
@@ -48,11 +48,12 @@ public struct StatefulPreviewWrapper<Value: Equatable, Content: View>: View {
     }
 
     public var body: some View {
-        content(states.indices.map { index in
-            Binding(
-                get: { states[index] },
-                set: { states[index] = $0 }
-            )
-        })
+        content(
+            states.indices.map { index in
+                Binding(
+                    get: { states[index] },
+                    set: { states[index] = $0 }
+                )
+            })
     }
 }

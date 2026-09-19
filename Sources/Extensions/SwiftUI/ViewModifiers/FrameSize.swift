@@ -1,4 +1,4 @@
-import SwiftUI
+public import SwiftUI
 
 /// Adds a dashed-colored frame-size container to a view for UI debugging.
 public struct FrameSize: ViewModifier {
@@ -24,18 +24,18 @@ public struct FrameSize: ViewModifier {
     }
 }
 
-public extension View {
-
+extension View {
     /// Applies the `FrameSize` modifier to the view.
     ///
     /// - Parameter color: The stroke `Color`. Default is `.blue`.
+    /// - Returns: A view with a debugging overlay in debug builds.
     ///
     /// ![FrameSize preview](framesize.png)
-    @ViewBuilder func frameSize(_ color: Color = .blue) -> some View {
-#if DEBUG
-        // Makes sure the debugging frame doesn't ever show up in production.
-        modifier(FrameSize(color: color))
-#endif
+    @ViewBuilder public func frameSize(_ color: Color = .blue) -> some View {
+        #if DEBUG
+            // Makes sure the debugging frame doesn't ever show up in production.
+            modifier(FrameSize(color: color))
+        #endif
     }
 }
 

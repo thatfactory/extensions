@@ -1,7 +1,8 @@
-import ImageIO
+public import ImageIO
 
+// This package intentionally supplies a stable diagnostic description for Apple's enum.
+// swift-format-ignore: AvoidRetroactiveConformances
 extension CGImagePropertyOrientation: @retroactive CustomStringConvertible {
-
     /// Helper that makes instances of type `CGImagePropertyOrientation` print-friendly.
     ///
     /// E.g.: `print(orientation.description)` // Left (Rotated 90° CW (ClockWise)

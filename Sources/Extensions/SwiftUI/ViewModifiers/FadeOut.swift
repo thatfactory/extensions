@@ -1,4 +1,4 @@
-import SwiftUI
+public import SwiftUI
 
 /// Fades out the edge of a view based on a given `FadeOut.Edge`.
 public struct FadeOut: ViewModifier {
@@ -20,7 +20,7 @@ public struct FadeOut: ViewModifier {
                     gradient: Gradient(
                         stops: [
                             .init(color: .black, location: 0),
-                            .init(color: .clear, location: 1)
+                            .init(color: .clear, location: 1),
                         ]
                     ),
                     startPoint: params.startPoint,
@@ -45,13 +45,14 @@ public struct FadeOut: ViewModifier {
     }
 }
 
-public extension View {
+extension View {
     /// Fades out the view on the specified edge.
     ///
     /// - Parameter edge: The edge to fade out.
+    /// - Returns: A view whose specified edge fades to transparent.
     ///
     /// ![FadeOut preview](fadeout.png)
-    func fadeOut(edge: FadeOut.Edge) -> some View {
+    public func fadeOut(edge: FadeOut.Edge) -> some View {
         modifier(FadeOut(edge: edge))
     }
 }

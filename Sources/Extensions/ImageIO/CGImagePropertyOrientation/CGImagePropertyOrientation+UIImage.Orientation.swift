@@ -1,70 +1,61 @@
 #if canImport(UIKit)
+    public import ImageIO
+    public import UIKit
 
-import ImageIO
-import UIKit
+    // The CGImagePropertyOrientation type covers the same orientation names as
+    // UIImage.Orientation, but their raw values differ. Use the functions below to map
+    // semantically equivalent values between the types.
+    // Source: https://apple.co/3GnXuPE
 
-/*
- The CGImagePropertyOrientation type covers the same set of orientation names available
- in from the UIImage.Orientation type, but the underlying numeric values of each type
- do not match. (For example, the "left mirrored" orientation has an underlying value of
- 5 in CGImagePropertyOrientation, but an underlying value of 7 in UIImage.Orientation.)
- If you have an orientation value in one type and need a semantically equivalent value in
- the other, use the functions below.
- 
- Source: https://apple.co/3GnXuPE
- */
-
-public extension CGImagePropertyOrientation {
-
-    /// Initializes a `CGImagePropertyOrientation` from the given `UIImage.Orientation`,
-    /// providing a mapping between the different orientation systems.
-    init?(_ uiOrientation: UIImage.Orientation) {
-        switch uiOrientation {
-        case .up:
-            self = .up
-        case .upMirrored:
-            self = .upMirrored
-        case .down:
-            self = .down
-        case .downMirrored:
-            self = .downMirrored
-        case .left:
-            self = .left
-        case .leftMirrored:
-            self = .leftMirrored
-        case .right:
-            self = .right
-        case .rightMirrored:
-            self = .rightMirrored
-        @unknown default:
-            return nil
+    extension CGImagePropertyOrientation {
+        /// Initializes a `CGImagePropertyOrientation` from the given `UIImage.Orientation`,
+        /// providing a mapping between the different orientation systems.
+        public init?(_ uiOrientation: UIImage.Orientation) {
+            switch uiOrientation {
+            case .up:
+                self = .up
+            case .upMirrored:
+                self = .upMirrored
+            case .down:
+                self = .down
+            case .downMirrored:
+                self = .downMirrored
+            case .left:
+                self = .left
+            case .leftMirrored:
+                self = .leftMirrored
+            case .right:
+                self = .right
+            case .rightMirrored:
+                self = .rightMirrored
+            @unknown default:
+                return nil
+            }
         }
     }
-}
 
-public extension UIImage.Orientation {
-
-    /// Initializes a `UIImage.Orientation` from the given `CGImagePropertyOrientation`,
-    /// providing a mapping between the different orientation systems.
-    init(_ cgOrientation: CGImagePropertyOrientation) {
-        switch cgOrientation {
-        case .up:
-            self = .up
-        case .upMirrored:
-            self = .upMirrored
-        case .down:
-            self = .down
-        case .downMirrored:
-            self = .downMirrored
-        case .left:
-            self = .left
-        case .leftMirrored:
-            self = .leftMirrored
-        case .right:
-            self = .right
-        case .rightMirrored:
-            self = .rightMirrored
+    extension UIImage.Orientation {
+        /// Initializes a `UIImage.Orientation` from the given `CGImagePropertyOrientation`,
+        /// providing a mapping between the different orientation systems.
+        public init(_ cgOrientation: CGImagePropertyOrientation) {
+            switch cgOrientation {
+            case .up:
+                self = .up
+            case .upMirrored:
+                self = .upMirrored
+            case .down:
+                self = .down
+            case .downMirrored:
+                self = .downMirrored
+            case .left:
+                self = .left
+            case .leftMirrored:
+                self = .leftMirrored
+            case .right:
+                self = .right
+            case .rightMirrored:
+                self = .rightMirrored
+            }
         }
     }
-}
 #endif

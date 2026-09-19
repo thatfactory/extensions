@@ -7,12 +7,11 @@
 
 import Foundation
 
-public extension String {
-
+extension String {
     /// Hides sensitive information.
     ///
     /// - Returns: `""` when `self` is empty or `"••••"` when `self` is not empty.
-    func masked() -> String {
+    public func masked() -> String {
         isEmpty ? "" : "••••"
     }
 }
