@@ -1,4 +1,4 @@
-import Foundation
+public import Foundation
 
 /// Provides convenient `CGFloat` constants for common angle measurements in radians.
 ///
@@ -9,9 +9,9 @@ import Foundation
 /// Example 2:
 /// Set a circular progress bar to half:
 /// progressBar.progress = .degrees180 / .degrees360
-public extension CGFloat {
-    static let degrees90    = CGFloat.pi / 2
-    static let degrees180   = CGFloat.pi
-    static let degrees270   = CGFloat.pi + (CGFloat.pi / 2)
-    static let degrees360   = 2 * CGFloat.pi
+extension CGFloat {
+    public static let degrees90 = CGFloat.pi / 2
+    public static let degrees180 = CGFloat.pi
+    public static let degrees270 = CGFloat.pi + (CGFloat.pi / 2)
+    public static let degrees360 = 2 * CGFloat.pi
 }

@@ -1,36 +1,37 @@
 #if canImport(Photos)
+    public import Photos
 
-import Photos
-
-extension PHAssetMediaSubtype: @retroactive CustomStringConvertible {
-
-    /// Helper that makes instances of type `PHAssetMediaSubtype` print-friendly.
-    ///
-    /// E.g.: `print(phAssetMediaType.description)` // photoPanorama.
-    public var description: String {
-        let result = Self.debugDescriptions.filter { contains($0.value) }
-        if result.isEmpty {
-            let prefix = (rawValue == 0) ? ", None" : ""
-            return "\(rawValue)\(prefix)"
-        } else {
-            return result
-                .map { $0.description }
-                .joined(separator: ", ")
+    // This package intentionally supplies a stable diagnostic description for Apple's option set.
+    // swift-format-ignore: AvoidRetroactiveConformances
+    extension PHAssetMediaSubtype: @retroactive CustomStringConvertible {
+        /// Helper that makes instances of type `PHAssetMediaSubtype` print-friendly.
+        ///
+        /// E.g.: `print(phAssetMediaType.description)` // photoPanorama.
+        public var description: String {
+            let result = Self.debugDescriptions.filter { contains($0.value) }
+            if result.isEmpty {
+                let prefix = (rawValue == 0) ? ", None" : ""
+                return "\(rawValue)\(prefix)"
+            } else {
+                return
+                    result
+                    .map { $0.description }
+                    .joined(separator: ", ")
+            }
         }
-    }
 
-    /// Debug-friendly descriptions for common media subtypes.
-    public static let debugDescriptions: [(value: Self, description: String)] = [
-        (.photoPanorama, "photoPanorama"),
-        (.photoHDR, "photoHDR"),
-        (.photoScreenshot, "photoScreenshot"),
-        (.photoLive, "photoLive"),
-        (.photoDepthEffect, "photoDepthEffect"),
-        (.videoStreamed, "videoStreamed"),
-        (.videoHighFrameRate, "videoHighFrameRate"),
-        (.videoTimelapse, "videoTimelapse"),
-        (.videoCinematic, "videoCinematic") // Needs iOS 15+, macOS 13+
-    ]
-}
+        /// Debug-friendly descriptions for common media subtypes.
+        public static let debugDescriptions: [(value: Self, description: String)] = [
+            (.photoPanorama, "photoPanorama"),
+            (.photoHDR, "photoHDR"),
+            (.photoScreenshot, "photoScreenshot"),
+            (.photoLive, "photoLive"),
+            (.photoDepthEffect, "photoDepthEffect"),
+            (.videoStreamed, "videoStreamed"),
+            (.videoHighFrameRate, "videoHighFrameRate"),
+            (.videoTimelapse, "videoTimelapse"),
+            (.videoCinematic, "videoCinematic"),  // Needs iOS 15+, macOS 13+
+        ]
+    }
 
 #endif

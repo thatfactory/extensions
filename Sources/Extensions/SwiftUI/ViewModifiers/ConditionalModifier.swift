@@ -1,7 +1,6 @@
-import SwiftUI
+public import SwiftUI
 
-public extension View {
-
+extension View {
     /// Allows applying view modifiers based on some criteria.
     ///
     /// Usage example:
@@ -31,7 +30,7 @@ public extension View {
     /// ```
     ///
     /// [source](https://stackoverflow.com/a/71203870/584548)
-    @ViewBuilder func modify<Content: View>(@ViewBuilder _ transform: (Self) -> Content?) -> some View {
+    @ViewBuilder public func modify<Content: View>(@ViewBuilder _ transform: (Self) -> Content?) -> some View {
         if let view = transform(self), !(view is EmptyView) {
             view
         } else {
