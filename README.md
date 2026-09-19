@@ -25,7 +25,7 @@ In your `Package.swift`, add `Extensions` as a dependency:
 dependencies: [
     .package(
         url: "https://github.com/thatfactory/extensions",
-        from: "0.3.2"
+        from: "0.3.3"
     )
 ]
 ```
