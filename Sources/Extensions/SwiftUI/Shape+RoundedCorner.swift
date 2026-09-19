@@ -1,6 +1,7 @@
-import SwiftUI
-
 #if canImport(UIKit)
+    public import SwiftUI
+    public import UIKit
+
     /// Produces a shape with rounded corners.
     ///
     /// Allows specifying which corner is to be rounded. For example:
